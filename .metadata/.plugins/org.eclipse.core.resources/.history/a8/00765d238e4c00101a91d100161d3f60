@@ -1,0 +1,144 @@
+//
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
+//
+// Documentation for these modules is at http://veins.car2x.org/
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//
+
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include <iostream>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+// En el archivo TraCIDemo11p.cc
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    // Detección mejorada de colisión
+    if (traciVehicle->getSpeed() < 0.1) { // Usamos velocidad casi cero
+        if (simTime() - lastDroveAt >= 5 && !hasCrashed) { // 5 segundos detenido
+            hasCrashed = true;
+            collisionTime = simTime();
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 COLISIÓN DETECTADA en tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            // Marcar visualmente
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            findHost()->getDisplayString().setTagArg("i", 1, "red");
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+
+            // Enviar mensaje de alerta
+            sendCollisionAlert(pos);
+        }
+    } else {
+        lastDroveAt = simTime();
+        if (hasCrashed) {
+            hasCrashed = false;
+            traciVehicle->setColor(TraCIColor(0, 255, 0, 255)); // Verde
+            findHost()->getDisplayString().setTagArg("i", 1, "green");
+            findHost()->getDisplayString().setTagArg("t", 0, "");
+        }
+    }
+}
+
+void TraCIDemo11p::sendCollisionAlert(const Coord& pos)
+{
+    TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+    populateWSM(wsm);
+    wsm->setDemoData("COLLISION");
+    wsm->setSenderAddress(myId);
+
+    // Almacenamos la posición en el mensaje como string
+    std::ostringstream oss;
+    oss << pos.x << "," << pos.y;
+    wsm->setDemoData(oss.str().c_str());
+
+    if (dataOnSch) {
+        startService(Channel::sch2, 42, "Collision Alert Service");
+        scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+    } else {
+        sendDown(wsm);
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+{
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    std::string messageData = wsm->getDemoData();
+    if (messageData.find("COLLISION") != std::string::npos) {
+        // Extraer posición del mensaje
+        std::string posStr = messageData.substr(messageData.find(",")+1);
+        std::istringstream iss(posStr);
+        double x, y;
+        char comma;
+        iss >> x >> comma >> y;
+        Coord collisionPos(x, y);
+
+        // Calcular distancia
+        double distance = mobility->getPositionAt(simTime()).distance(collisionPos);
+
+        if (distance < 500) { // 500m de radio
+            EV << "Recibida alerta de colisión a " << distance << "m. Buscando ruta alternativa..." << endl;
+
+            // Obtener ruta actual
+            std::string currentRoad = mobility->getRoadId();
+
+            // Intentar cambiar a ruta alternativa
+            try {
+                if (currentRoad == "32302591#5" || currentRoad == "-33174302#0") {
+                    traciVehicle->changeRoute("alt1", 0);
+                    EV << "Cambiando a ruta alternativa alt1" << endl;
+                }
+                // Forzar actualización de ruta
+                traciVehicle->slowDown(0, 1); // Pequeño truco para forzar reencaminamiento
+            } catch (const cRuntimeError& e) {
+                EV << "Error al cambiar ruta: " << e.what() << endl;
+            }
+        }
+    }
+}

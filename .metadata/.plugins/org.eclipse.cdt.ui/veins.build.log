@@ -1,0 +1,9 @@
+23:04:10 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+
+23:04:14 Build Finished. 0 errors, 0 warnings. (took 4s.482ms)
+

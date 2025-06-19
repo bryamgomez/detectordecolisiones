@@ -1,0 +1,117 @@
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+
+#include <iostream>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage) {
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+
+        std::list<std::string> routeIds = traci->getRouteIds();
+        EV << "📍 Rutas definidas en SUMO:" << endl;
+        for (const auto& routeId : routeIds) {
+            EV << "- " << routeId << endl;
+        }
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa) {
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    if (wsm->isCollision()) {
+        Coord myPos = mobility->getCurrentPosition();
+        Coord collisionPos = wsm->getCollisionPosition();
+        double dist = myPos.distance(collisionPos);
+
+        if (!hasCrashed && dist < 300) {
+            std::string currentEdge = mobility->getRoadId();
+
+            // Verifica si es razonable cambiar ruta desde el punto actual
+            if (currentEdge == "-4006676" || currentEdge == "-32302591#3") {
+                EV << "🚧 Colisión detectada a " << dist << " m. Cambiando a ruta alternativa." << endl;
+
+                std::vector<std::string> altRoute = {
+                    "-4006676", "-32302591#3", "-4006684", "-4006684",
+                    "4006674#3", "4006674#3", "23605600#1", "23605600#2"
+                };
+
+                traciVehicle->setRoute(altRoute);
+                traciVehicle->setColor(TraCIColor(0, 255, 0, 255));  // Verde indica desvío
+                findHost()->getDisplayString().setTagArg("t", 0, "🚗 Desvío por colisión");
+                hasCrashed = true;
+            }
+        }
+    }
+}
+
+void TraCIDemo11p::handleSelfMsg(cMessage* msg) {
+    if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+        sendDown(wsm->dup());
+        wsm->setSerial(wsm->getSerial() + 1);
+        if (wsm->getSerial() >= 3) {
+            stopService();
+            delete wsm;
+        } else {
+            scheduleAt(simTime() + 1, wsm);
+        }
+    } else {
+        DemoBaseApplLayer::handleSelfMsg(msg);
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj) {
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && !hasCrashed) {
+            hasCrashed = true;
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 Vehículo detenido (posible colisión). Tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0x00);  // Desactiva todos los controles automáticos
+
+            if (!sentMessage) {
+                sentMessage = true;
+                TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                populateWSM(wsm);
+
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                wsm->setIsCollision(true);
+                wsm->setCollisionPosition(pos);
+
+                if (dataOnSch) {
+                    startService(Channel::sch2, 42, "Traffic Information Service");
+                    scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                } else {
+                    sendDown(wsm);
+                }
+            }
+        }
+    } else {
+        lastDroveAt = simTime();
+    }
+}

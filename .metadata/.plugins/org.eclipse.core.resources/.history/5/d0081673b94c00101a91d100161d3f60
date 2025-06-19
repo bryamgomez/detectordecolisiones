@@ -1,0 +1,107 @@
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "veins/base/utils/FindModule.h"
+
+#include <omnetpp/cSimulation.h>
+#include <iomanip>
+#include <list>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+/****************************************************************
+ *  INICIALIZACIÓN
+ ****************************************************************/
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+
+    if (stage == 0) {
+        hasCrashed = false;
+        currentSubscribedServiceId = -1;
+
+        /* Mostrar las rutas declaradas en SUMO */
+        std::list<std::string> rids = traci->getRouteIds();
+        EV << "📍 Rutas disponibles:" << endl;
+        for (auto& r : rids) EV << "  - " << r << endl;
+    }
+}
+
+/****************************************************************
+ *  MENSAJES INTERNOS: detector de colisiones
+ ****************************************************************/
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    /* DemoBaseApplLayer maneja sus relojes internos          */
+    DemoBaseApplLayer::handleSelfMsg(msg);
+
+    /* Comprobar colisión propia solo si aún no la registré   */
+    if (!hasCrashed && traciVehicle->getCollidingVehiclesNumber() > 0) {
+        hasCrashed = true;
+        crashPosition = mobility->getCurrentPosition();
+
+        EV << "⚠️  Colisión detectada en "
+           << crashPosition.x << "," << crashPosition.y << endl;
+
+        /* Cambiar color a rojo */
+        traciVehicle->changeColor(veins::TraCIColor(255, 0, 0, 255));
+
+        /* Construir y transmitir WSM de alerta */
+        auto danger = new TraCIDemo11pMessage();
+        danger->setDemoData("COLLISION");
+        danger->setSenderAddress(myId);
+        danger->setPosition(crashPosition);
+        populateWSM(danger);
+        sendDown(danger);
+    }
+}
+
+/****************************************************************
+ *  WSA: suscripción al canal de servicio (sin cambios)
+ ****************************************************************/
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        EV << "🛰️  Subscrito a servicio " << currentSubscribedServiceId << endl;
+    }
+}
+
+/****************************************************************
+ *  WSM: procesar alertas de colisión y desviarse
+ ****************************************************************/
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+{
+    auto* msg = dynamic_cast<TraCIDemo11pMessage*>(frame);
+    if (!msg) return;                              // no es nuestro tipo
+
+    /* Solo reaccionar a mensaje de colisión */
+    if (strcmp(msg->getDemoData(), "COLLISION") != 0) return;
+
+    /* Calcular distancia */
+    Coord here = mobility->getCurrentPosition();
+    double dist = here.distance(msg->getPosition());
+
+    if (dist < 300 && !hasCrashed) {               // yo no choqué pero estoy cerca
+        EV << "🚧 Recibí alerta, colisión a " << dist << " m → cambiando a altRoute"
+           << endl;
+
+        try {
+            traciVehicle->changeRoute("altRoute", 9999);   // prioridad alta
+            traciVehicle->changeColor(veins::TraCIColor(0, 255, 0, 255)); // verde
+        }
+        catch (Veins::TraCIException& e) {
+            EV << "❌ Error al cambiar ruta: " << e.what() << endl;
+        }
+    }
+}
+
+/****************************************************************
+ *  POSICIÓN: actualización estándar
+ ****************************************************************/
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+}

@@ -1,0 +1,121 @@
+//
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
+//
+// Documentation for these modules is at http://veins.car2x.org/
+//
+/#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include <iostream>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+
+        // Mostrar rutas disponibles al inicio
+        std::list<std::string> routeIds = traci->getRouteIds();
+        EV << "Rutas definidas en la red:" << endl;
+        for (const auto& routeId : routeIds) {
+            EV << "- " << routeId << endl;
+        }
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    if (wsm->isCollision()) {
+        // Cambiar color del vehículo receptor a amarillo para alertar
+        traciVehicle->setColor(TraCIColor(255, 255, 0, 255));  // Amarillo
+        findHost()->getDisplayString().setTagArg("t", 0, "⚠️ ALERTA CHOQUE");
+
+        EV << "Vehículo " << traciVehicle->getID() << " recibió alerta de choque." << endl;
+
+        // Programar restauración de color después de 10 segundos
+        scheduleAt(simTime() + 10, new cMessage("resetColor"));
+    }
+}
+
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    if (strcmp(msg->getName(), "resetColor") == 0) {
+        // Restaurar color original blanco y eliminar texto
+        traciVehicle->setColor(TraCIColor(255, 255, 255, 255));  // Blanco
+        findHost()->getDisplayString().setTagArg("t", 0, "");
+        delete msg;
+    }
+    else if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+        // Reenviar mensaje en canal de servicio
+        sendDown(wsm->dup());
+        wsm->setSerial(wsm->getSerial() + 1);
+        if (wsm->getSerial() >= 3) {
+            stopService();
+            delete wsm;
+        } else {
+            scheduleAt(simTime() + 1, wsm);
+        }
+    }
+    else {
+        DemoBaseApplLayer::handleSelfMsg(msg);
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && !hasCrashed) {
+            hasCrashed = true;
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 Vehículo detenido por posible colisión. Tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));  // Rojo choque
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0x00);
+
+            if (!sentMessage) {
+                sentMessage = true;
+                TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                populateWSM(wsm);
+
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                wsm->setIsCollision(true);
+                wsm->setCollisionPosition(pos);
+
+                if (dataOnSch) {
+                    startService(Channel::sch2, 42, "Traffic Information Service");
+                    scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                } else {
+                    sendDown(wsm);
+                }
+            }
+        }
+    } else {
+        lastDroveAt = simTime();
+    }
+}
+

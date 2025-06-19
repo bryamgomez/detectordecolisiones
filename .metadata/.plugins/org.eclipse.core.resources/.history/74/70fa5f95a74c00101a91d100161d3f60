@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Vehículo 1 (Norte-Sur) - Configuración EXTREMA -->
+    <vType id="tipo_rapido" accel="15.0" decel="0.1" sigma="0" length="4.0" 
+           minGap="0" maxSpeed="70" color="red" impatience="1.0" lcStrategic="0"/>
+    
+    <!-- Vehículo 2 (Este-Oeste) - Configuración EXTREMA -->
+    <vType id="tipo_super_rapido" accel="20.0" decel="0.1" sigma="0" length="4.0"
+           minGap="0" maxSpeed="90" color="blue" impatience="1.0" lcStrategic="0"/>
+
+    <!-- Vehículo 1 - Ruta Norte-Sur (el que estaba lento) -->
+    <trip id="vehicle_0" type="tipo_super_rapido" depart="0.00" departSpeed="max" 
+          from="-33174302#1" to="10425131"/>
+    
+    <!-- Vehículo 2 - Ruta Este-Oeste -->
+    <trip id="vehicle_1" type="tipo_rapido" depart="0.05" departSpeed="max" 
+          from="-4006676" to="10712013" via="32302591#5 -29900565#3 8402998#0"/>
+</routes>

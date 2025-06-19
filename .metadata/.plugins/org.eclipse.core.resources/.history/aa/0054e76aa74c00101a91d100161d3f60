@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Definición de tipo de vehículo agresivo -->
+    <vType id="crash_car" accel="10.0" decel="0.1" sigma="0.8" length="4.0" 
+           minGap="0" maxSpeed="50" color="red" impatience="1.0"/>
+    
+    <!-- Vehículo 1 - Ruta Norte-Sur -->
+    <trip id="vehicle_0" type="crash_car" depart="0.00" departSpeed="max" 
+          from="-33174302#1" to="10425131"/>
+    
+    <!-- Vehículo 2 - Ruta Este-Oeste -->
+    <trip id="vehicle_1" type="crash_car" depart="0.00" departSpeed="max" 
+          from="-4006676" to="10712013" via="32302591#5 -29900565#3 8402998#0"/>
+</routes>

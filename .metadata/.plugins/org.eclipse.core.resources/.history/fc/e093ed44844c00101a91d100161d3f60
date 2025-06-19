@@ -1,0 +1,202 @@
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include <iostream> // Añade al inicio del archivo
+
+
+using namespace veins;
+
+protected:
+    bool hasCrashed;
+    simtime_t collisionTime;
+    static const simtime_t COLLISION_RESET_TIME = 30; // segundos
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage)
+{
+    std::cout << "🚀 Iniciando módulo TraCIDemo11p: " << getExternalId() << std::endl;
+
+    DemoBaseApplLayer::initialize(stage);
+    /*if (stage == 0) {
+        sentMessage = false;
+        hasCrashed = false;  // Inicializar estado
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+    }*/
+    if (stage == 0) {
+        sentMessage = false;
+        hasCrashed = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+
+        mobility->subscribe(this);  // ← ¡Esta línea es crucial!
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+{
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    /*
+    if (mobility->getRoadId()[0] != ':') traciVehicle-> Route(wsm->getDemoData(), 9999);
+    if (!sentMessage) {
+        sentMessage = true;
+        wsm->setSenderAddress(myId);
+        wsm->setSerial(3);
+        scheduleAt(simTime() + 2 + uniform(0.01, 0.2), wsm->dup());
+    }*/
+}
+
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+
+        sendDown(wsm->dup());
+        wsm->setSerial(wsm->getSerial() + 1);
+        if (wsm->getSerial() >= 3) {
+            // stop service advertisements
+            stopService();
+            delete (wsm);
+        }
+        else {
+            scheduleAt(simTime() + 1, wsm);
+        }
+    }
+    else {
+        DemoBaseApplLayer::handleSelfMsg(msg);
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    /*DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    // stopped for for at least 10s?
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && sentMessage == false) {
+            findHost()->getDisplayString().setTagArg("i", 1, "red");
+            sentMessage = true;
+
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+            populateWSM(wsm);
+            wsm->setDemoData(mobility->getRoadId().c_str());
+
+            // host is standing still due to crash
+            if (dataOnSch) {
+                startService(Channel::sch2, 42, "Traffic Information Service");
+                // started service and server advertising, schedule message to self to send later
+                scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+            }
+            else {
+                // send right away on CCH, because channel switching is disabled
+                sendDown(wsm);
+            }
+        }
+    }
+    else {
+        lastDroveAt = simTime();
+    }*/
+
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    // Método mejorado para detectar colisiones
+        bool currentCollision = false;
+        std::string collisionPartners = "";
+
+        try {
+            // Intenta obtener IDs de vehículos colisionados (método alternativo)
+            auto nearbyVehicles = traciVehicle->getNeighbors();
+            double minDistance = traciVehicle->getLength() * 0.8; // Umbral de colisión
+
+            for (auto& vehicle : nearbyVehicles) {
+                double distance = traciVehicle->getDistanceTo(vehicle);
+                if (distance < minDistance) {
+                    currentCollision = true;
+                    collisionPartners += vehicle + " ";
+                }
+            }
+        } catch (const std::exception& e) {
+            std::cerr << "ERROR al verificar colisiones: " << e.what() << std::endl;
+        }
+
+        std::cout << "Debug: Detectando colisiones para " << getExternalId() << std::endl;
+        std::cout << "Vecinos detectados: " << nearbyVehicles.size() << std::endl;
+
+        if (hasCrashed) {
+            //findHost()->getDisplayString().setTagArg("i", 1, "blue");
+            traciVehicle->setColor(TraCIColor(0, 0, 255));  // Azul
+            getParentModule()->getDisplayString().setTagArg("t", 0, "COLISIÓN");
+        }
+
+        if (currentCollision && !hasCrashed) {
+            hasCrashed = true;
+            collisionTime = simTime();
+
+            // Mensaje detallado por cout
+            std::cout << "\n========================================"
+                      << "\n|   COLISIÓN DETECTADA - CONSOLA       |"
+                      << "\n========================================"
+                      << "\n| Vehículo: " << getExternalId()
+                      << "\n| Tiempo: " << simTime().str() << "s"
+                      << "\n| Posición: X=" << mobility->getPositionAt(simTime()).x
+                      << " Y=" << mobility->getPositionAt(simTime()).y
+                      << "\n| Vehículos involucrados: " << (collisionPartners.empty() ? "OBJETO" : collisionPartners)
+                      << "\n========================================\n" << std::endl;
+
+            // Cambios visuales
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            //findHost()->getDisplayString().setTagArg("i", 1, "blue");
+            traciVehicle->setColor(TraCIColor(0, 0, 255));  // Azul
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            EV << "🚨 Vehículo " << traciVehicle->getId() << " ha colisionado en " << simTime() << "s\n";
+
+            std::cout << "🚗❌ Colisión detectada para vehículo " << traciVehicle->getId() << " en tiempo " << simTime() << std::endl;
+
+
+            // Detener vehículo
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0x00);
+        }
+        std::cout << "Test: handlePositionUpdate ejecutado en tiempo: " << simTime().str() << std::endl;
+       // Resto de tu lógica existente...
+       if (mobility->getSpeed() < 1) {
+           if (simTime() - lastDroveAt >= 10 && sentMessage == false) {
+
+               //findHost()->getDisplayString().setTagArg("i", 1, "blue");
+               traciVehicle->setColor(TraCIColor(0, 0, 255));  // Azul
+
+                           sentMessage = true;
+
+                           TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                           populateWSM(wsm);
+                           wsm->setDemoData(mobility->getRoadId().c_str());
+
+                           // host is standing still due to crash
+                           if (dataOnSch) {
+                               startService(Channel::sch2, 42, "Traffic Information Service");
+                               // started service and server advertising, schedule message to self to send later
+                               scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                           }
+                           else {
+                               // send right away on CCH, because channel switching is disabled
+                               sendDown(wsm);
+                           }
+           }
+       }
+       else {
+           lastDroveAt = simTime();
+       }
+}

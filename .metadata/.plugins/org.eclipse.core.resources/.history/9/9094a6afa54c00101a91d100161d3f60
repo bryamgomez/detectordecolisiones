@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+   <!-- Vehículo tipo 0 - Primer flujo -->
+   <vType id="vtype0" accel="2.6" decel="4.5" sigma="0.5" length="2.5" minGap="0.5" maxSpeed="30" color="1,1,0" />
+   <route id="route0" edges="-33174302#1 -33174302#0 -32270595 -29900561#1 -29900561#0 -4006688#4"/>
+   <flow id="flow0" type="vtype0" route="route0" begin="0" end="100" period="3" number="195"/>
+   
+   <!-- Vehículo tipo 1 - Segundo flujo (para colisión) -->
+   <vType id="vtype1" accel="30" decel="0.1" sigma="0.5" length="2.5" minGap="1" maxSpeed="30" color="1,0,0" />
+   <route id="route1" edges="32302591#3 32302591#4 32302591#5 -29900565#3 -29900565#2"/>
+   <flow id="flow1" type="vtype1" route="route1" begin="0" end="100" period="3" number="195"/>
+   
+   <!-- Ruta adicional (comentada) -->
+   <!-- <route id="route2" edges="23605600#0 23605600#1 23605600#2"/> -->
+</routes>

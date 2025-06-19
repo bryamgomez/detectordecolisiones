@@ -1,0 +1,1377 @@
+!SESSION 2024-05-02 09:15:33.582 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2024-05-02 09:16:45.177
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+
+!ENTRY org.python.pydev.shared_core 1 1 2024-05-02 09:16:53.166
+!MESSAGE Restoring info for: /usr/bin/python3
+!STACK 0
+java.lang.RuntimeException: Restoring info for: /usr/bin/python3
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:461)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.internalRecreateCacheGetInterpreterInfos(AbstractInterpreterManager.java:287)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.setInfos(AbstractInterpreterManager.java:584)
+	at org.omnetpp.scave.ScavePlugin.ensurePyDevInterpreterConfigured(ScavePlugin.java:139)
+	at org.omnetpp.scave.ScavePlugin.start(ScavePlugin.java:62)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.lambda$2(BundleContextImpl.java:808)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:802)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:759)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1019)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:605)
+	at org.eclipse.osgi.container.Module.start(Module.java:468)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:404)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:570)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:335)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:384)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:471)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:403)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.omnetpp.ide.OmnetppStartup.earlyStartup(OmnetppStartup.java:88)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$40.run(Workbench.java:2667)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.io.IOException: Expecting: /home/ricky/Documents/R.Vehicular/Trabajos-omnet/.metadata/.plugins/org.python.pydev/v1_eqo8on6m6qtijnz6835bycxw5/modulesKeys to exist (and be a file).
+	at org.python.pydev.ast.codecompletion.revisited.ModulesManager.loadFromFile(ModulesManager.java:330)
+	at org.python.pydev.ast.codecompletion.revisited.SystemModulesManager.load(SystemModulesManager.java:443)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:459)
+	... 28 more
+
+!ENTRY org.python.pydev.shared_core 1 1 2024-05-02 09:16:59.738
+!MESSAGE Finished restoring information for: /usr/bin/python3 at: /home/ricky/Documents/R.Vehicular/Trabajos-omnet/.metadata/.plugins/org.python.pydev/v1_eqo8on6m6qtijnz6835bycxw5
+!STACK 0
+java.lang.RuntimeException: Finished restoring information for: /usr/bin/python3 at: /home/ricky/Documents/R.Vehicular/Trabajos-omnet/.metadata/.plugins/org.python.pydev/v1_eqo8on6m6qtijnz6835bycxw5
+	at org.python.pydev.core.log.Log.logInfo(Log.java:45)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.getInterpretersFromPersistedString(AbstractInterpreterManager.java:506)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.internalRecreateCacheGetInterpreterInfos(AbstractInterpreterManager.java:287)
+	at org.python.pydev.ast.interpreter_managers.AbstractInterpreterManager.setInfos(AbstractInterpreterManager.java:584)
+	at org.omnetpp.scave.ScavePlugin.ensurePyDevInterpreterConfigured(ScavePlugin.java:139)
+	at org.omnetpp.scave.ScavePlugin.start(ScavePlugin.java:62)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.lambda$2(BundleContextImpl.java:808)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.startActivator(BundleContextImpl.java:802)
+	at org.eclipse.osgi.internal.framework.BundleContextImpl.start(BundleContextImpl.java:759)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.startWorker0(EquinoxBundle.java:1019)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle$EquinoxModule.startWorker(EquinoxBundle.java:365)
+	at org.eclipse.osgi.container.Module.doStart(Module.java:605)
+	at org.eclipse.osgi.container.Module.start(Module.java:468)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:404)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:570)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:335)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:384)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:41)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:471)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:403)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:168)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.omnetpp.ide.OmnetppStartup.earlyStartup(OmnetppStartup.java:88)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:79)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:55)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.ui.internal.Workbench$40.run(Workbench.java:2667)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.help.base 2 0 2024-05-02 09:17:13.746
+!MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.wst.dtdeditor.doc.user_1.1.0.v201903222120 [402]'. The index should be rebuilt with Lucene 8.4.1
+
+!ENTRY org.eclipse.help.base 2 0 2024-05-02 09:17:14.037
+!MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.wst.xmleditor.doc.user_1.1.0.v201903222120 [415]'. The index should be rebuilt with Lucene 8.4.1
+
+!ENTRY org.eclipse.help.base 2 0 2024-05-02 09:17:14.039
+!MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.wst.xsdeditor.doc.user_1.0.800.v201903222120 [418]'. The index should be rebuilt with Lucene 8.4.1
+
+!ENTRY org.eclipse.help.base 2 0 2024-05-02 09:17:14.040
+!MESSAGE Unable to consume Lucene index from bundle 'org.eclipse.wst.sse.doc.user_1.2.0.v201903222120 [405]'. The index should be rebuilt with Lucene 8.4.1
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-02 09:25:23.889
+!MESSAGE Indexed 'veins' (99 sources, 732 headers) in 89 sec: 73,522 declarations; 178,093 references; 75 unresolved inclusions; 76 syntax errors; 1,397 unresolved names (0.55%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2024-05-02 09:37:42.206
+!MESSAGE Indexed 'veins' (117 sources, 751 headers) in 175 sec: 78,277 declarations; 192,178 references; 40 unresolved inclusions; 76 syntax errors; 509 unresolved names (0.19%)
+
+!ENTRY org.eclipse.ui.console 4 0 2024-05-02 09:47:27.849
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2024-05-02 09:47:27.876
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2024-05-02 09:56:24.933
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2024-05-02 09:56:24.934
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2024-05-02 10:04:11.807
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2024-05-02 10:04:11.808
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2024-05-05 09:11:40.811 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2024-05-05 09:12:06.717
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+
+!ENTRY org.python.pydev.shared_core 4 4 2024-05-05 09:12:40.410
+!MESSAGE Info: Rebuilding internal caches: /home/ricky/Documents/R.Vehicular/Trabajos-omnet/.metadata/.plugins/com.python.pydev.analysis/python_v1_eqo8on6m6qtijnz6835bycxw5/python.pydevsysteminfo (Expected error to be provided and got no error!)
+!SESSION 2025-06-10 11:50:59.117 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2025-06-10 11:51:18.247
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-10 11:57:13.096
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-10 11:57:13.127
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-10 11:57:28.653
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-10 11:57:28.655
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2025-06-10 17:06:48.271 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-06-10 17:07:07.417
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.omnetpp.main 1 0 2025-06-10 17:07:17.634
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+!SESSION 2025-06-15 15:50:49.819 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-06-15 15:51:00.363
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.omnetpp.main 1 0 2025-06-15 15:51:10.233
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+!SESSION 2025-06-18 15:16:39.482 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2025-06-18 15:17:07.276
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.omnetpp.main 1 0 2025-06-18 15:17:17.821
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+
+!ENTRY org.eclipse.cdt.core 4 0 2025-06-18 15:19:14.791
+!MESSAGE Error: Trying to access template arguments before they have been stored.
+!STACK 0
+java.lang.IllegalArgumentException: Trying to access template arguments before they have been stored.
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPArgumentList.getArguments(PDOMCPPArgumentList.java:76)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassInstance.getTemplateArguments(PDOMCPPClassInstance.java:85)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMInstanceCache.populate(PDOMInstanceCache.java:93)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMInstanceCache.getCache(PDOMInstanceCache.java:44)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPClassTemplate.getInstance(PDOMCPPClassTemplate.java:273)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.getInstance(CPPTemplates.java:465)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.instantiate(CPPTemplates.java:291)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.instantiate(CPPTemplates.java:259)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.resolveDeferredClassInstance(CPPTemplates.java:3201)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.resolveUnknown(CPPTemplates.java:3104)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.instantiateBinding(CPPTemplates.java:1787)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.instantiateBinding(CPPTemplates.java:1792)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPEvaluation.instantiateBinding(CPPEvaluation.java:100)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.ExecConstructorChain.instantiate(ExecConstructorChain.java:37)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.CPPTemplates.instantiateConstructorChain(CPPTemplates.java:3354)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPConstructorSpecialization.getConstructorChainExecution(CPPConstructorSpecialization.java:46)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPConstructorSpecialization.getConstructorChainExecution(CPPConstructorSpecialization.java:51)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage$ConfigureConstructorSpecialization.<init>(PDOMCPPLinkage.java:380)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPConstructorSpecialization.<init>(PDOMCPPConstructorSpecialization.java:45)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createSpecialization(PDOMCPPLinkage.java:992)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.createBinding(PDOMCPPLinkage.java:787)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:706)
+	at org.eclipse.cdt.internal.core.pdom.dom.cpp.PDOMCPPLinkage.addBinding(PDOMCPPLinkage.java:626)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.createPDOMName(PDOMFile.java:522)
+	at org.eclipse.cdt.internal.core.pdom.dom.PDOMFile.addNames(PDOMFile.java:488)
+	at org.eclipse.cdt.internal.core.pdom.WritablePDOM.addFileContent(WritablePDOM.java:158)
+	at org.eclipse.cdt.internal.core.index.WritableCIndex.setFileContent(WritableCIndex.java:89)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeFileInIndex(PDOMWriter.java:679)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.storeSymbolsInIndex(PDOMWriter.java:329)
+	at org.eclipse.cdt.internal.core.pdom.PDOMWriter.addSymbols(PDOMWriter.java:287)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.writeToIndex(AbstractIndexerTask.java:1295)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseFile(AbstractIndexerTask.java:1107)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.parseLinkage(AbstractIndexerTask.java:910)
+	at org.eclipse.cdt.internal.core.pdom.AbstractIndexerTask.runTask(AbstractIndexerTask.java:572)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMIndexerTask.run(PDOMIndexerTask.java:164)
+	at org.eclipse.cdt.internal.core.pdom.indexer.PDOMRebuildTask.run(PDOMRebuildTask.java:94)
+	at org.eclipse.cdt.internal.core.pdom.PDOMIndexerJob.run(PDOMIndexerJob.java:160)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-06-18 15:20:20.959
+!MESSAGE Indexed 'veins' (118 sources, 751 headers) in 167 sec: 78,297 declarations; 192,383 references; 40 unresolved inclusions; 77 syntax errors; 509 unresolved names (0.19%)
+!SESSION 2025-06-18 15:26:31.068 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2025-06-18 15:27:16.602
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+!SESSION 2025-06-18 15:35:54.388 -----------------------------------------------
+eclipse.buildId=6.0.0.220413-71d8fab425
+java.version=17.0.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.omnetpp.main 1 0 2025-06-18 15:36:13.336
+!MESSAGE OMNeT++ IDE 6.0.0.220413-71d8fab425 started.
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 15:47:31.851
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 15:47:31.927
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 16:04:59.774
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 16:04:59.775
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 16:48:31.841
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 16:48:31.841
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 16:48:38.465
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 16:48:38.466
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 16:49:12.985
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 16:49:12.986
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:06:44.366
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:06:44.374
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:07:51.470
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:07:51.471
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:08:54.363
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:08:54.363
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:17:12.641
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:17:12.641
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:18:23.086
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:18:23.086
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:18:50.150
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 17:18:50.151
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:20:02.401
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:20:02.401
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:24:40.865
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 17:24:40.866
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:26:32.653
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 17:26:32.654
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:30:23.248
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:30:23.248
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:32:38.227
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:32:38.228
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:33:06.221
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:33:06.221
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:35:02.357
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:35:02.357
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:35:19.979
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:35:19.979
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:36:48.213
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:36:48.214
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:37:52.345
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 17:37:52.346
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:42:03.644
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:42:03.645
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:45:15.241
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:45:15.242
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:45:20.594
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:45:20.594
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:46:06.324
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:46:06.324
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:48:43.927
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:48:43.928
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:49:19.827
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:49:19.827
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:51:00.644
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:51:00.644
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 17:54:27.906
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 17:54:27.906
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:13:03.748
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 18:13:03.748
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:13:45.009
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 18:13:45.009
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:16:40.404
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 133 2025-06-18 18:16:40.405
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:20:18.071
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 18:20:18.071
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:32:37.754
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 18:32:37.755
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:32:52.130
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 18:32:52.131
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 18:33:56.816
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 18:33:56.817
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 19:38:41.882
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 19:38:41.896
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 20:20:30.876
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 20:20:30.876
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 20:59:23.349
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 20:59:23.350
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 21:30:34.411
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 21:30:34.424
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 21:48:56.101
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 21:48:56.102
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:15:56.047
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 134 2025-06-18 22:15:56.048
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:35:00.231
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 22:35:00.232
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:47:41.072
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:47:41.072
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:47:57.758
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:47:57.758
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:51:32.428
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 1 2025-06-18 22:51:32.428
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:52:38.633
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:52:38.634
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:54:07.738
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:54:07.739
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:55:19.697
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:55:19.697
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.ui.console 4 0 2025-06-18 22:57:45.623
+!MESSAGE Streams are already closed.
+!STACK 0
+java.lang.IllegalStateException: Streams are already closed.
+	at org.eclipse.ui.internal.console.IOConsolePartitioner.streamsClosed(IOConsolePartitioner.java:271)
+	at org.eclipse.ui.console.IOConsole.checkFinished(IOConsole.java:262)
+	at org.eclipse.ui.console.IOConsole.streamClosed(IOConsole.java:274)
+	at org.eclipse.ui.console.IOConsoleOutputStream.close(IOConsoleOutputStream.java:181)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.doPrintToConsole(OmnetppLaunchUtils.java:995)
+	at org.omnetpp.launch.tabs.OmnetppLaunchUtils.printToConsole(OmnetppLaunchUtils.java:1010)
+	at org.omnetpp.launch.SimulationLauncherJob.dumpPostMortemInfo(SimulationLauncherJob.java:206)
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:133)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.omnetpp.launch 4 139 2025-06-18 22:57:45.629
+!MESSAGE Finished with Error
+!STACK 0
+java.lang.RuntimeException: 
+	at org.omnetpp.launch.SimulationLauncherJob.run(SimulationLauncherJob.java:146)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

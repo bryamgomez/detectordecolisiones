@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Definición de tipos de vehículos agresivos -->
+    <vType id="agresivo" accel="10.0" decel="0.1" sigma="0.9" length="4.0" minGap="0" maxSpeed="50" 
+           color="1,0,0" guiShape="passenger" impatience="1.0" lcStrategic="0" lcCooperative="0"/>
+    
+    <!-- Vehículo 1 (Ruta Norte-Sur) -->
+    <vehicle id="vehicle_0" type="agresivo" depart="0.00" departSpeed="max">
+        <route edges="-33174302#1 -33174302#0 -32270595 -29900561#1 -29900561#0 -4006688#4 10425131"/>
+    </vehicle>
+    
+    <!-- Vehículo 2 (Ruta Este-Oeste) -->
+    <vehicle id="vehicle_1" type="agresivo" depart="0.00" departSpeed="max">
+        <route edges="-4006676 32302591#5 -29900565#3 8402998#0 10712013"/>
+    </vehicle>
+    
+    <!-- Flujos adicionales para aumentar densidad -->
+    <flow id="flow0" type="agresivo" begin="0" end="10" period="1" departSpeed="max">
+        <route edges="-33174302#1 -33174302#0 -32270595 -29900561#1 -29900561#0 -4006688#4 10425131"/>
+    </flow>
+    
+    <flow id="flow1" type="agresivo" begin="0" end="10" period="1" departSpeed="max">
+        <route edges="-4006676 32302591#5 -29900565#3 8402998#0 10712013"/>
+    </flow>
+</routes>

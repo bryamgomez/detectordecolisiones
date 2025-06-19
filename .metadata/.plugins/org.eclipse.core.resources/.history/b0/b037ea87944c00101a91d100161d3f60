@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on mié 18 jun 2025 11:00:02 by Eclipse SUMO netedit Version 1.8.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="0"/>
+        <junctions.limit-turn-speed value="-1"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+   <!-- Definición de tipos de vehículos -->
+   <vType id="car" accel="2.6" decel="4.5" sigma="0.5" length="4.3" minGap="2.5" maxSpeed="50" color="1,1,0"/>
+   <vType id="aggressive" accel="3.0" decel="6.0" sigma="0.8" length="4.3" minGap="1.0" maxSpeed="60" color="1,0,0"/>
+   
+   <!-- Rutas principales -->
+   <route id="ruta_norte_sur" edges="-33174302#1 -33174302#0 -32270595 -29900561#1 -29900561#0 -4006688#4"/>
+   <route id="ruta_este_oeste" edges="32302591#3 32302591#4 32302591#5 -29900565#3 -29900565#2"/>
+   <route id="ruta_alternativa" edges="-32302591#4 -23605600#0 -23605600#1"/>
+   
+   <!-- Flujos reducidos para prueba de colisiones -->
+   <flow id="flujo_ns" type="car" route="ruta_norte_sur" begin="0" end="100" period="5" number="10"/>
+   <flow id="flujo_eo" type="car" route="ruta_este_oeste" begin="0" end="100" period="5" number="10"/>
+   
+   <!-- Vehículos individuales para provocar colisión controlada -->
+   <vehicle id="veh_colision1" type="aggressive" route="ruta_norte_sur" depart="0" departPos="100" departSpeed="10">
+     <param key="has.crash.device" value="true"/>
+   </vehicle>
+   
+</routes>

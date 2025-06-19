@@ -1,0 +1,21 @@
+
+                populateWSM(wsm);
+
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                wsm->setIsCollision(true);
+                wsm->setCollisionPosition(pos);
+
+                if (dataOnSch) {
+                    startService(Channel::sch2, 42, "Traffic Information Service");
+                    scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                } else {
+                    sendDown(wsm);
+                }
+            }
+        }
+    } else {
+        lastDroveAt = simTime();
+    }
+}
+
+

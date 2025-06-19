@@ -1,0 +1,25 @@
+#pragma once
+
+#include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+
+namespace veins {
+
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+public:
+    void initialize(int stage) override;
+
+protected:
+    simtime_t lastDroveAt;                 // Último momento en el que el vehículo se movió
+    bool hasCrashed = false;              // Bandera para indicar si el vehículo ya reportó colisión
+    bool sentMessage = false;             // Bandera para evitar múltiples envíos
+    int currentSubscribedServiceId = -1;  // Canal al que se suscribió el vehículo
+
+protected:
+    void onWSM(BaseFrame1609_4* wsm) override;         // Procesar mensajes entrantes
+    void onWSA(DemoServiceAdvertisment* wsa) override; // Procesar anuncios de servicios
+
+    void handleSelfMsg(cMessage* msg) override;        // Manejar mensajes propios
+    void handlePositionUpdate(cObject* obj) override;  // Verificar si el vehículo se detuvo
+};
+
+} // namespace veins

@@ -1,0 +1,26 @@
+#ifndef __VEINS_TRACIDEMO11P_H_
+#define __VEINS_TRACIDEMO11P_H_
+
+#include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+
+namespace veins {
+
+class TraCIDemo11p : public DemoBaseApplLayer {
+  protected:
+    /* flags y datos de colisión */
+    bool hasCrashed = false;
+    Coord crashPosition;
+
+    /* utilidades */
+    int currentSubscribedServiceId = -1;
+
+    /* sobrecargas */
+    virtual void initialize(int stage) override;
+    virtual void handleSelfMsg(cMessage* msg) override;
+    virtual void onWSA(DemoServiceAdvertisment* wsa) override;
+    virtual void onWSM(BaseFrame1609_4* wsm) override;
+    virtual void handlePositionUpdate(cObject* obj) override;
+};
+
+} // namespace veins
+#endif

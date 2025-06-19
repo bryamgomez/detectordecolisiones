@@ -1,0 +1,125 @@
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "veins/modules/mobility/traci/TraCIMobility.h"
+#include "veins/modules/mobility/traci/TraCICommandInterface.h"
+#include <omnetpp.h>
+
+using namespace veins;
+using namespace omnetpp;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage) {
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+        isRerouting = false;
+        destinationEdge = getCurrentDestination(); // Obtener destino inicial
+    }
+}
+
+std::string TraCIDemo11p::getCurrentDestination() {
+    // Obtener la lista de bordes de la ruta actual
+    std::list<std::string> routeEdges = traciVehicle->getPlannedRoadIds();
+    if (!routeEdges.empty()) {
+        return routeEdges.back(); // El último borde es el destino
+    }
+    return "";
+}
+
+void TraCIDemo11p::findAndChangeRoute() {
+    if (isRerouting) return;
+
+    isRerouting = true;
+    std::string currentDest = destinationEdge;
+
+    if (currentDest.empty()) {
+        EV << "No se pudo determinar el destino actual" << endl;
+        isRerouting = false;
+        return;
+    }
+
+    // Obtener posición actual
+    std::string currentEdge = mobility->getRoadId();
+
+    // Calcular nueva ruta dinámica
+    try {
+        EV << "Calculando nueva ruta desde " << currentEdge << " hasta " << currentDest << endl;
+
+        // Cambiar a ruta calculada dinámicamente
+        traciVehicle->changeTarget(currentDest);
+
+        // Cambiar color a amarillo para indicar rerouting
+        traciVehicle->setColor(TraCIColor(255, 255, 0, 255));
+        findHost()->getDisplayString().setTagArg("t", 0, "REROUTING");
+
+        EV << "Ruta cambiada exitosamente" << endl;
+    }
+    catch (const cRuntimeError& e) {
+        EV << "Error al cambiar ruta: " << e.what() << endl;
+        isRerouting = false;
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    if (wsm->isCollision()) {
+        // Verificar distancia al choque
+        Coord collisionPos = wsm->getCollisionPosition();
+        double distance = mobility->getPositionAt(simTime()).distance(collisionPos);
+
+        if (distance < 300) { // 300 metros de radio
+            findAndChangeRoute(); // Cambiar ruta inmediatamente
+        }
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj) {
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    // Resetear estado de rerouting si el vehículo está moviéndose normalmente
+    if (mobility->getSpeed() > 1 && isRerouting) {
+        isRerouting = false;
+    }
+
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && !hasCrashed) {
+            hasCrashed = true;
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 Vehículo detenido por posible colisión. Tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0x00);
+
+            if (!sentMessage) {
+                sentMessage = true;
+                TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                populateWSM(wsm);
+
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                wsm->setIsCollision(true);
+                wsm->setCollisionPosition(pos);
+
+                if (dataOnSch) {
+                    startService(Channel::sch2, 42, "Traffic Information Service");
+                    scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                } else {
+                    sendDown(wsm);
+                }
+
+                // Intentar rerouting inmediatamente para este vehículo
+                findAndChangeRoute();
+            }
+        }
+    } else {
+        lastDroveAt = simTime();
+    }
+}

@@ -1,0 +1,117 @@
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include "veins/base/utils/FindModule.h"
+
+#include <omnetpp/cmessage.h>
+#include <string>
+#include <list>
+
+using namespace omnetpp;
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+/****************************************************************
+ *  INIT
+ ****************************************************************/
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+
+    if (stage == 0) {
+        EV << "🚗 TraCIDemo11p inicializado\n";
+        hasCrashed = false;
+        currentSubscribedServiceId = -1;
+
+        /* Imprime las rutas disponibles para depuración */
+        std::list<std::string> rids = traci->getRouteIds();
+        EV << "🔀 Rutas en SUMO:\n";
+        for (auto& r : rids) EV << "  - " << r << endl;
+    }
+}
+
+/****************************************************************
+ *  SELF MESSAGES – comprueba colisión propia y emite WSM
+ ****************************************************************/
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    /* Paso base (maneja beacons y temporizadores internos) */
+    DemoBaseApplLayer::handleSelfMsg(msg);
+
+    /* Solo interesa si aún no hemos marcado colisión */
+    if (!hasCrashed) {
+        /* TraCI: número de colisiones acumuladas de este vehículo */
+        int collisions = traciVehicle->getCollisions().size();
+        if (collisions > 0) {
+            hasCrashed = true;
+            crashPosition = mobility->getPositionAt(simTime());
+
+            /* Cambia color para identificar el choque */
+            traciVehicle->changeColor(veins::TraCIColor(255, 0, 0, 255));
+
+            /* Construye y envía WSM de alerta */
+            TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage("CollisionAlert");
+            wsm->setSenderAddress(myId);
+            wsm->setWsmData("COLLISION");
+            wsm->setCollision(true);
+            wsm->setCollisionX(crashPosition.x);
+            wsm->setCollisionY(crashPosition.y);
+            wsm->setRecipientAddress(LAddress::BROADCAST.getAddress());
+
+            EV << "⚠️  Enviando WSM de colisión desde " << myId
+               << " @ " << crashPosition << endl;
+
+            sendDown(wsm);
+        }
+    }
+}
+
+/****************************************************************
+ *  WSA – no afecta a colisiones (ejemplo de suscripción)
+ ****************************************************************/
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        EV << "📻 Subscrito al servicio " << currentSubscribedServiceId << endl;
+    }
+}
+
+/****************************************************************
+ *  WSM – recepción de alerta y cambio de ruta
+ ****************************************************************/
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+{
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    /* Solo procesar mensajes de colisión */
+    if (!wsm->getCollision()) return;
+
+    Coord crash(wsm->getCollisionX(), wsm->getCollisionY(), 0);
+    Coord myPos = mobility->getPositionAt(simTime());
+    double dist = crash.distance(myPos);
+
+    /* Umbral: 300 m */
+    if (dist < 300 && (!hasCrashed)) {
+        EV << "🚧 Colisión a " << dist << " m; cambiando a altRoute\n";
+
+        /* Cambia ruta (prioridad 9999 fuerza cambio inmediato) */
+        try {
+            traciVehicle->changeRoute("altRoute", 9999);
+            traciVehicle->changeColor(veins::TraCIColor(0, 255, 0, 255)); // verde
+        }
+        catch (Veins::TraCIException& e) {
+            EV << "❌ Error al cambiar ruta: " << e.what() << endl;
+        }
+    }
+}
+
+/****************************************************************
+ *  POSICIÓN – sólo registra la hora de último movimiento
+ ****************************************************************/
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+    lastDroveAt = simTime();
+}

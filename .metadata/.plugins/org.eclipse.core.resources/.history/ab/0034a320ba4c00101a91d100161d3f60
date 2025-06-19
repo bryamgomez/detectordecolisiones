@@ -1,0 +1,123 @@
+//
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
+//
+// Documentation for these modules is at http://veins.car2x.org/
+//
+/// SPDX-License-Identifier: GPL-2.0-or-later
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include <iostream>
+#include <random>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+        warningReceived = false;
+
+        // Configuración de parámetros
+        warningRadius = par("warningRadius").doubleValue();
+        rerouteProbability = par("rerouteProbability").doubleValue();
+
+        // Mostrar rutas disponibles al inicio
+        std::list<std::string> routeIds = traci->getRouteIds();
+        EV << "Rutas definidas en la red:" << endl;
+        for (const auto& routeId : routeIds) {
+            EV << "- " << routeId << endl;
+        }
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    if (wsm->isCollision()) {
+        // Verificar distancia al choque
+        Coord collisionPos = wsm->getCollisionPosition();
+        double distance = mobility->getPositionAt(simTime()).distance(collisionPos);
+
+        if (distance <= warningRadius && !warningReceived) {
+            warningReceived = true;
+
+            // Cambiar color a amarillo (advertencia)
+            traciVehicle->setColor(TraCIColor(255, 255, 0, 255));
+            findHost()->getDisplayString().setTagArg("i", 1, "yellow");
+            findHost()->getDisplayString().setTagArg("t", 0, "⚠ ALERTA");
+
+            // Decidir si cambiar de ruta (con probabilidad)
+            std::default_random_engine generator;
+            std::uniform_real_distribution<double> distribution(0.0, 1.0);
+
+            if (distribution(generator) <= rerouteProbability) {
+                EV << "Vehículo " << getParentModule()->getFullName()
+                   << " está cambiando de ruta debido a alerta de colisión" << endl;
+
+                // Obtener rutas alternativas
+                std::list<std::string> routeIds = traci->getRouteIds();
+                std::string currentRoute = traciVehicle->getRouteId();
+
+                for (const auto& routeId : routeIds) {
+                    if (routeId != currentRoute) {
+                        // Cambiar a la primera ruta alternativa encontrada
+                        traciVehicle->changeRoute(routeId, 9999);
+                        break;
+                    }
+                }
+            }
+
+            // Reenviar el mensaje de advertencia (con retardo)
+            scheduleAt(simTime() + uniform(0.1, 0.5), wsm->dup());
+        }
+    }
+}
+
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+        // Reenviar mensaje de advertencia
+        sendDown(wsm);
+        delete msg;
+    }
+    else {
+        DemoBaseApplLayer::handleSelfMsg(msg);
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && !hasCrashed) {
+            hasCrashed = true;
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 Vehículo detenido por posible colisión. Tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            // Cambiar a color rojo
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            findHost()->getDisplayString().setTagArg("i", 1, "red");
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <!-- Tipo de vehículo ultra agresivo -->
+    <vType id="crash_type" accel="10.0" decel="0.1" sigma="0.9" length="5.0"
+           minGap="0" maxSpeed="50" color="red" impatience="1.0" lcStrategic="0"
+           collisionAction="warn" jmIgnoreJunctionFoeProb="1.0" jmIgnoreFoeProb="1.0"/>
+    
+    <!-- Flujo 1 - Dirección principal -->
+    <flow id="flow_0" type="crash_type" begin="0" end="3600" period="1.5" departSpeed="max">
+        <route edges="-4006676 32302591#5 -29900565#3 8402998#2 10425131"/>
+    </flow>
+    
+    <!-- Flujo 2 - Dirección opuesta para colisión -->
+    <flow id="flow_1" type="crash_type" begin="0" end="3600" period="1.5" departSpeed="max">
+        <route edges="-33174302#1 -33174302#0 -32270595 -29900561#1 -29900561#0 -4006688#4 10712013"/>
+    </flow>
+    
+    <!-- Vehículo adicional para asegurar colisión -->
+    <vehicle id="crash_leader" type="crash_type" depart="0" departSpeed="max">
+        <route edges="-4006676 32302591#5 -29900565#3 8402998#2 10425131"/>
+    </vehicle>
+</routes>
+

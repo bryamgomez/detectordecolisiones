@@ -1,0 +1,16 @@
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <!-- Tipo de vehículo -->
+    <vType id="aggressive" accel="3.0" decel="1.0" sigma="0.5" tau="0.1" minGap="0.5" maxSpeed="30"/>
+
+    <!-- Definición de rutas con ID -->
+    <route id="mainRoute" edges="-4006676 32302591#3 -29900565#3 8402998#2"/>
+    <route id="altRoute" edges="-4006676 -32302591#3 -4006684 -4006684 4006674#3 4006674#3 23605600#1 23605600#2"/>
+
+    <!-- Vehículos asignados a rutas -->
+    <vehicle id="vehicle_0" type="aggressive" depart="0.00" route="mainRoute" color="blue"/>
+    <vehicle id="vehicle_1" type="aggressive" depart="5.00" route="altRoute" color="cyan"/>
+
+</routes>
+

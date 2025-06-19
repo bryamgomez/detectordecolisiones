@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Tipos de vehículo -->
+    <vType id="normal" accel="2.0" decel="4.5" sigma="0.5" tau="1.0" minGap="2.5" maxSpeed="30"/>
+    <vType id="aggressive" accel="3.0" decel="1.0" sigma="0.5" tau="0.1" minGap="0.5" maxSpeed="30" emergencyDecel="9.0"/>
+    <vType id="emergency" accel="4.0" decel="9.0" sigma="0.1" tau="0.5" minGap="1.0" maxSpeed="50" guiShape="emergency"/>
+
+    <!-- Rutas alternativas adicionales -->
+    <route id="altRoute1" edges="-4006676 -32302591#3 -4006684 4006674#3 23605600#1 23605600#2"/>
+    <route id="altRoute2" edges="33174302#1 -4006684 4006674#3 23605600#1 23605600#2"/>
+    
+    <!-- Vehículos y flujos -->
+    <!-- ... mantener tus definiciones actuales ... -->
+</routes>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- generated on mié 18 jun 2025 20:01:01 by Eclipse SUMO netedit Version 1.8.0
+<configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/netconvertConfiguration.xsd">
+
+    <input>
+        <sumo-net-file value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.net.xml"/>
+    </input>
+
+    <output>
+        <output-file value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.net.xml"/>
+    </output>
+
+    <processing>
+        <geometry.min-radius.fix.railways value="false"/>
+        <geometry.max-grade.fix value="false"/>
+        <offset.disable-normalization value="true"/>
+        <lefthand value="false"/>
+    </processing>
+
+    <junctions>
+        <no-turnarounds value="true"/>
+        <junctions.corner-detail value="0"/>
+        <junctions.limit-turn-speed value="-1"/>
+        <rectangular-lane-cut value="false"/>
+    </junctions>
+
+    <pedestrian>
+        <walkingareas value="false"/>
+    </pedestrian>
+
+    <netedit>
+        <route-files value="/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/examples/veins/erlangen.rou.xml"/>
+    </netedit>
+
+    <report>
+        <aggregate-warnings value="5"/>
+    </report>
+
+</configuration>
+-->
+
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+    
+    <vType id="aggressive" accel="3.0" decel="1.0" sigma="0.5" tau="0.1" minGap="0.5" maxSpeed="30" />
+
+    <trip id="vehicle_0" type="aggressive" depart="0.00" from="-4006676" to="10425131" via="32302591#5 -29900565#3 8402998#2"/>
+
+    <flow id="flow_0" type="aggressive" begin="0.00" from="-4006676" to="10425131" via="-29900565#3 -29900564#0" end="3600.00" period="2.00"/>
+
+    <flow id="flow_1" type="aggressive" begin="0.00" from="33174302#1" to="10712013" end="3600.00" period="2.00"/>
+    
+</routes>
+

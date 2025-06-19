@@ -1,0 +1,179 @@
+//
+// Copyright (C) 2006-2011 Christoph Sommer <christoph.sommer@uibk.ac.at>
+//
+// Documentation for these modules is at http://veins.car2x.org/
+//
+// SPDX-License-Identifier: GPL-2.0-or-later
+//
+// This program is free software; you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation; either version 2 of the License, or
+// (at your option) any later version.
+//
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with this program; if not, write to the Free Software
+// Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//
+
+#include "veins/modules/application/traci/TraCIDemo11p.h"
+
+#include "veins/modules/application/traci/TraCIDemo11pMessage_m.h"
+#include <iostream>
+
+using namespace veins;
+
+Define_Module(veins::TraCIDemo11p);
+
+void TraCIDemo11p::initialize(int stage)
+{
+    DemoBaseApplLayer::initialize(stage);
+    if (stage == 0) {
+        sentMessage = false;
+        lastDroveAt = simTime();
+        currentSubscribedServiceId = -1;
+        hasCrashed = false;
+
+        // Mostrar rutas disponibles al inicio
+        std::list<std::string> routeIds = traci->getRouteIds();
+        EV << "Rutas definidas en la red:" << endl;
+        for (const auto& routeId : routeIds) {
+            EV << "- " << routeId << endl;
+        }
+    }
+}
+
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+{
+    if (currentSubscribedServiceId == -1) {
+        mac->changeServiceChannel(static_cast<Channel>(wsa->getTargetChannel()));
+        currentSubscribedServiceId = wsa->getPsid();
+        if (currentOfferedServiceId != wsa->getPsid()) {
+            stopService();
+            startService(static_cast<Channel>(wsa->getTargetChannel()), wsa->getPsid(), "Mirrored Traffic Service");
+        }
+    }
+}
+
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame)
+{
+    TraCIDemo11pMessage* wsm = check_and_cast<TraCIDemo11pMessage*>(frame);
+
+    findHost()->getDisplayString().setTagArg("i", 1, "green");
+
+    // Manejo de mensajes de colisión
+    if (wsm->isCollision()) {
+        Coord collisionPos = wsm->getCollisionPosition();
+        Coord myPos = mobility->getPositionAt(simTime());
+        double distance = sqrt(pow(collisionPos.x - myPos.x, 2) + pow(collisionPos.y - myPos.y, 2));
+
+        if (distance < 500 && !hasCrashed) {
+            // Obtener lista de todas las rutas definidas
+            std::list<std::string> routeIds = traci->getRouteIds();
+            std::string currentRouteId = traciVehicle->getRouteId();
+
+            EV << "Rutas disponibles: ";
+            for (const auto& routeId : routeIds) {
+                EV << routeId << " ";
+            }
+            EV << endl;
+
+            // Buscar una ruta alternativa que no sea la actual
+            for (const auto& routeId : routeIds) {
+                if (routeId != currentRouteId) {
+                    try {
+                        // Cambiar a la ruta alternativa completa
+                        traciVehicle->changeRoute(routeId, 9999);
+                        EV << "Cambiando a ruta alternativa: " << routeId << endl;
+                        break;
+                    } catch (const cRuntimeError& e) {
+                        EV << "Error al cambiar a ruta " << routeId << ": " << e.what() << endl;
+                        continue;
+                    }
+                }
+            }
+        }
+    }
+
+    // Cambio de ruta normal (no por colisión)
+    if (!sentMessage && mobility->getRoadId()[0] != ':') {
+        std::string proposedRoute = wsm->getDemoData();
+        std::list<std::string> validRoutes = traci->getRouteIds();
+
+        // Verificar que la ruta propuesta existe
+        if (std::find(validRoutes.begin(), validRoutes.end(), proposedRoute) != validRoutes.end()) {
+            try {
+                traciVehicle->changeRoute(proposedRoute, 9999);
+            } catch (const cRuntimeError& e) {
+                EV << "Error al cambiar a ruta " << proposedRoute << ": " << e.what() << endl;
+            }
+        } else {
+            EV << "Ruta propuesta no existe: " << proposedRoute << endl;
+        }
+    }
+}
+
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+{
+    if (TraCIDemo11pMessage* wsm = dynamic_cast<TraCIDemo11pMessage*>(msg)) {
+        // send this message on the service channel until the counter is 3 or higher.
+        // this code only runs when channel switching is enabled
+        sendDown(wsm->dup());
+        wsm->setSerial(wsm->getSerial() + 1);
+        if (wsm->getSerial() >= 3) {
+            // stop service advertisements
+            stopService();
+            delete (wsm);
+        }
+        else {
+            scheduleAt(simTime() + 1, wsm);
+        }
+    }
+    else {
+        DemoBaseApplLayer::handleSelfMsg(msg);
+    }
+}
+
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+{
+    DemoBaseApplLayer::handlePositionUpdate(obj);
+
+    if (mobility->getSpeed() < 1) {
+        if (simTime() - lastDroveAt >= 10 && !hasCrashed) {
+            hasCrashed = true;
+            Coord pos = mobility->getPositionAt(simTime());
+
+            EV << "🚨 Vehículo detenido por posible colisión. Tiempo: " << simTime()
+               << ", Posición: (" << pos.x << ", " << pos.y << ")" << endl;
+
+            traciVehicle->setColor(TraCIColor(255, 0, 0, 255));
+            findHost()->getDisplayString().setTagArg("t", 0, "✖ COLISIÓN");
+            traciVehicle->setSpeed(0);
+            traciVehicle->setSpeedMode(0x00);
+
+            if (!sentMessage) {
+                sentMessage = true;
+                TraCIDemo11pMessage* wsm = new TraCIDemo11pMessage();
+                populateWSM(wsm);
+
+                // Enviar el ID de ruta actual, no un edge específico
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                wsm->setIsCollision(true);
+                wsm->setCollisionPosition(pos);
+
+                if (dataOnSch) {
+                    startService(Channel::sch2, 42, "Traffic Information Service");
+                    scheduleAt(computeAsynchronousSendingTime(1, ChannelType::service), wsm);
+                } else {
+                    sendDown(wsm);
+                }
+            }
+        }
+    } else {
+        lastDroveAt = simTime();
+    }
+}

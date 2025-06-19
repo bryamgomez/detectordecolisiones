@@ -1,0 +1,1280 @@
+21:26:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:26:18 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:28:42 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:30:38 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:33:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:20:93: error: reference to non-static member function must be called
+        traciVehicle = TraCIMobilityAccess().get(getParentModule())->getCommandInterface()->vehicle;
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:34:15 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:20:24: error: type 'veins::TraCIMobilityAccess' does not provide a call operator
+        traciVehicle = TraCIMobilityAccess()(getParentModule())->getCommandInterface()->vehicle;
+                       ^~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:35:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:20:52: error: call to non-static member function without an object argument
+        traciVehicle = veins::TraCIMobilityAccess::get(getParentModule())->getCommandInterface()->vehicle;
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:35:16 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:20:52: error: call to non-static member function without an object argument
+        traciVehicle = veins::TraCIMobilityAccess::get(getParentModule())->getCommandInterface()->vehicle;
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:36:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:20:100: error: reference to non-static member function must be called
+        traciVehicle = veins::TraCIMobilityAccess().get(getParentModule())->getCommandInterface()->vehicle;
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:38:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:41:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:41:50 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:18:9: error: use of undeclared identifier 'lastRouteChangeTime'
+        lastRouteChangeTime = -1;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:49:55: error: use of undeclared identifier 'lastRouteChangeTime'
+        if (!hasCrashed && dist < 300 && (simTime() - lastRouteChangeTime > 10)) {
+                                                      ^
+veins/modules/application/traci/TraCIDemo11p.cc:65:17: error: use of undeclared identifier 'lastRouteChangeTime'
+                lastRouteChangeTime = simTime();
+                ^
+3 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:44:04 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:48:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+21:51:13 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:44:40: error: no member named 'getCollisions' in 'veins::TraCICommandInterface::Vehicle'
+        int collisions = traciVehicle->getCollisions().size();
+                         ~~~~~~~~~~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:50:27: error: no member named 'changeColor' in 'veins::TraCICommandInterface::Vehicle'
+            traciVehicle->changeColor(veins::TraCIColor(255, 0, 0, 255));
+            ~~~~~~~~~~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:55:18: error: no member named 'setWsmData' in 'veins::TraCIDemo11pMessage'; did you mean 'setDemoData'?
+            wsm->setWsmData("COLLISION");
+                 ^~~~~~~~~~
+                 setDemoData
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:85:18: note: 'setDemoData' declared here
+    virtual void setDemoData(const char * demoData);
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:56:18: error: no member named 'setCollision' in 'veins::TraCIDemo11pMessage'; did you mean 'setIsCollision'?
+            wsm->setCollision(true);
+                 ^~~~~~~~~~~~
+                 setIsCollision
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:95:18: note: 'setIsCollision' declared here
+    virtual void setIsCollision(bool isCollision);
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:57:18: error: no member named 'setCollisionX' in 'veins::TraCIDemo11pMessage'; did you mean 'setIsCollision'?
+            wsm->setCollisionX(crashPosition.x);
+                 ^~~~~~~~~~~~~
+                 setIsCollision
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:95:18: note: 'setIsCollision' declared here
+    virtual void setIsCollision(bool isCollision);
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:58:18: error: no member named 'setCollisionY' in 'veins::TraCIDemo11pMessage'; did you mean 'setIsCollision'?
+            wsm->setCollisionY(crashPosition.y);
+                 ^~~~~~~~~~~~~
+                 setIsCollision
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:95:18: note: 'setIsCollision' declared here
+    virtual void setIsCollision(bool isCollision);
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:59:48: error: no member named 'BROADCAST' in 'veins::LAddress'
+            wsm->setRecipientAddress(LAddress::BROADCAST.getAddress());
+                                     ~~~~~~~~~~^
+veins/modules/application/traci/TraCIDemo11p.cc:89:15: error: no member named 'getCollision' in 'veins::TraCIDemo11pMessage'; did you mean 'isCollision'?
+    if (!wsm->getCollision()) return;
+              ^~~~~~~~~~~~
+              isCollision
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:94:18: note: 'isCollision' declared here
+    virtual bool isCollision() const;
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:91:22: error: no member named 'getCollisionX' in 'veins::TraCIDemo11pMessage'
+    Coord crash(wsm->getCollisionX(), wsm->getCollisionY(), 0);
+                ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:91:44: error: no member named 'getCollisionY' in 'veins::TraCIDemo11pMessage'
+    Coord crash(wsm->getCollisionX(), wsm->getCollisionY(), 0);
+                                      ~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:102:27: error: no member named 'changeColor' in 'veins::TraCICommandInterface::Vehicle'
+            traciVehicle->changeColor(veins::TraCIColor(0, 255, 0, 255)); // verde
+            ~~~~~~~~~~~~  ^
+veins/modules/application/traci/TraCIDemo11p.cc:104:16: error: use of undeclared identifier 'Veins'; did you mean 'veins'?
+        catch (Veins::TraCIException& e) {
+               ^~~~~
+               veins
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:44:11: note: 'veins' declared here
+namespace veins {
+          ^
+veins/modules/application/traci/TraCIDemo11p.cc:104:23: error: no type named 'TraCIException' in namespace 'veins'
+        catch (Veins::TraCIException& e) {
+               ~~~~~~~^
+veins/modules/application/traci/TraCIDemo11p.cc:116:5: error: use of undeclared identifier 'lastDroveAt'
+    lastDroveAt = simTime();
+    ^
+14 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+21:52:38 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:5:10: fatal error: 'omnetpp/cSimulation.h' file not found
+#include <omnetpp/cSimulation.h>
+         ^~~~~~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:01:58 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:8:
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:111:47: error: no function template matches function template specialization 'fromAnyPtr'
+template<> inline veins::TraCIDemo11pMessage *fromAnyPtr(any_ptr ptr) { return check_and_cast<veins::TraCIDemo11pMessage*>(ptr.get<cObject>()); }
+                                              ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:69:7: error: no template named 'numeric_limits' in namespace 'veins::std'; did you mean '::std::numeric_limits'?
+                          (std::numeric_limits<_UIntType>::digits)>
+                           ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/limits:312:12: note: '::std::numeric_limits' declared here
+    struct numeric_limits : public __numeric_limits_base
+           ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:114:40: error: no member named '__lg' in namespace 'veins::std'; did you mean '::std::__lg'?
+        typedef typename _Select_uint_least_t<std::__lg(__a)
+                                              ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:1506:3: note: '::std::__lg' declared here
+  __lg(int __n)
+  ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:115:14: error: no member named '__lg' in namespace 'veins::std'; did you mean '::std::__lg'?
+                                              + std::__lg(__m) + 2>::type _Tp2;
+                                                ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/stl_algobase.h:1506:3: note: '::std::__lg' declared here
+  __lg(int __n)
+  ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:166:16: error: no template named 'is_floating_point' in namespace 'veins::std'; did you mean '::std::is_floating_point'?
+        static_assert(std::is_floating_point<_DInputType>::value,
+                      ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:422:12: note: '::std::is_floating_point' declared here
+    struct is_floating_point
+           ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:190:30: error: no template named 'numeric_limits' in namespace 'veins::std'; did you mean '::std::numeric_limits'?
+                                    std::numeric_limits<_DInputType>::digits,
+                                    ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/limits:312:12: note: '::std::numeric_limits' declared here
+    struct numeric_limits : public __numeric_limits_base
+           ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:200:4: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+          std::declval<_Sseq&>().generate(std::declval<uint_least32_t*>(),
+          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:200:4: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+          std::declval<_Sseq&>().generate(std::declval<uint_least32_t*>(),
+          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:200:36: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+          std::declval<_Sseq&>().generate(std::declval<uint_least32_t*>(),
+                                          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:200:36: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+          std::declval<_Sseq&>().generate(std::declval<uint_least32_t*>(),
+                                          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:201:8: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+                                          std::declval<uint_least32_t*>()));
+                                          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:201:8: error: no template named 'declval' in namespace 'veins::std'; did you mean '::std::declval'?
+                                          std::declval<uint_least32_t*>()));
+                                          ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:2358:10: note: '::std::declval' declared here
+    auto declval() noexcept -> decltype(__declval<_Tp>(0))
+         ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:208:24: error: use of undeclared identifier '__remove_cvref_t'
+        __not_<is_same<__remove_cvref_t<_Sseq>, _Engine>>,
+                       ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:209:42: error: expected ';' after alias declaration
+        is_unsigned<typename _Sseq::result_type>,
+                                                ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:210:24: error: use of undeclared identifier '_Sseq'
+        __not_<is_convertible<_Sseq, _Res>>
+                              ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:211:7: error: expected unqualified-id
+      >;
+      ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:257:21: error: no template named 'is_unsigned' in namespace 'veins::std'; did you mean '::std::is_unsigned'?
+      static_assert(std::is_unsigned<_UIntType>::value,
+                    ^~~~~
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/type_traits:801:12: note: '::std::is_unsigned' declared here
+    struct is_unsigned
+           ^
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:10:
+In file included from /usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/random:49:
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:263:52: error: no member named '__is_seed_seq' in namespace 'veins::std::__detail'
+        using _If_seed_seq = typename enable_if<__detail::__is_seed_seq<
+                                                ~~~~~~~~~~^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:264:4: error: '_Sseq' does not refer to a value
+          _Sseq, linear_congruential_engine, _UIntType>::value>::type;
+          ^
+/usr/bin/../lib/gcc/x86_64-linux-gnu/11/../../../../include/c++/11/bits/random.h:262:25: note: declared here
+      template<typename _Sseq>
+                        ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:04:37 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:6:1: error: expected unqualified-id
+/#include "veins/modules/application/traci/TraCIDemo11p.h"
+^
+veins/modules/application/traci/TraCIDemo11p.cc:12:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:92: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+                                                                                           ^~~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:12:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:153:104: note: expanded from macro '__REGISTER_CLASS_X'
+  static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+                                                                                                       ^~~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:12:22: error: no member named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:125: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                                                                                                                            ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:54:30: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    void __ONSTARTUP_FUNC() {CODE;} \
+                             ^~~~
+veins/modules/application/traci/TraCIDemo11p.cc:14:6: error: use of undeclared identifier 'TraCIDemo11p'
+void TraCIDemo11p::initialize(int stage)
+     ^
+veins/modules/application/traci/TraCIDemo11p.cc:32:6: error: use of undeclared identifier 'TraCIDemo11p'
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+     ^
+veins/modules/application/traci/TraCIDemo11p.cc:32:26: error: unknown type name 'DemoServiceAdvertisment'
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa)
+                         ^
+veins/modules/application/traci/TraCIDemo11p.cc:44:6: error: use of undeclared identifier 'TraCIDemo11p'
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+     ^
+veins/modules/application/traci/TraCIDemo11p.cc:59:6: error: use of undeclared identifier 'TraCIDemo11p'
+void TraCIDemo11p::handleSelfMsg(cMessage* msg)
+     ^
+veins/modules/application/traci/TraCIDemo11p.cc:83:6: error: use of undeclared identifier 'TraCIDemo11p'
+void TraCIDemo11p::handlePositionUpdate(cObject* obj)
+     ^
+10 errors generated.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:05:53 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:2:
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:111:47: error: no function template matches function template specialization 'fromAnyPtr'
+template<> inline veins::TraCIDemo11pMessage *fromAnyPtr(any_ptr ptr) { return check_and_cast<veins::TraCIDemo11pMessage*>(ptr.get<cObject>()); }
+                                              ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no type named 'cObject' in namespace 'veins::omnetpp'; did you mean simply 'cObject'?
+Define_Module(TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:10: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+         ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/ccontextswitcher.h:33:7: note: 'cObject' declared here
+class cObject;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no type named 'cModule' in namespace 'veins::omnetpp'; did you mean simply 'cModule'?
+Define_Module(TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:63: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                              ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:33: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                                ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:71: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+                                                                      ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/envirext.h:30:7: note: 'cModule' declared here
+class cModule;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no type named 'cObject' in namespace 'veins::omnetpp'; did you mean simply 'cObject'?
+Define_Module(TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:153:53: note: expanded from macro '__REGISTER_CLASS_X'
+  static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+                                                    ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/ccontextswitcher.h:33:7: note: 'cObject' declared here
+class cObject;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+Define_Module(TraCIDemo11p);
+^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:22: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                     ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no type named 'cObjectFactory' in namespace 'veins::omnetpp'; did you mean simply 'cObjectFactory'?
+Define_Module(TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:72: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                                                                       ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:54:30: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    void __ONSTARTUP_FUNC() {CODE;} \
+                             ^~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cobjectfactory.h:35:15: note: 'cObjectFactory' declared here
+class SIM_API cObjectFactory : public cNoncopyableOwnedObject
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no type named 'CodeFragments' in namespace 'veins::omnetpp'; did you mean simply 'CodeFragments'?
+Define_Module(TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:3: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:55:12: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    static omnetpp::CodeFragments __ONSTARTUP_OBJ(__ONSTARTUP_FUNC, omnetpp::CodeFragments::STARTUP); \
+           ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:78:15: note: 'CodeFragments' declared here
+class SIM_API CodeFragments
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:7:1: error: no member named 'CodeFragments' in namespace 'veins::omnetpp'; did you mean simply 'CodeFragments'?
+Define_Module(TraCIDemo11p);
+^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:3: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:55:69: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    static omnetpp::CodeFragments __ONSTARTUP_OBJ(__ONSTARTUP_FUNC, omnetpp::CodeFragments::STARTUP); \
+                                                                    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:78:15: note: 'CodeFragments' declared here
+class SIM_API CodeFragments
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:9:20: error: cannot define or redeclare 'initialize' here because namespace 'veins' does not enclose namespace 'TraCIDemo11p'
+void TraCIDemo11p::initialize(int stage)
+     ~~~~~~~~~~~~~~^
+veins/modules/application/traci/TraCIDemo11p.cc:11:24: error: call to non-static member function without an object argument
+    DemoBaseApplLayer::initialize(stage);
+    ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:11:35: error: use of undeclared identifier 'stage'
+    DemoBaseApplLayer::initialize(stage);
+                                  ^
+veins/modules/application/traci/TraCIDemo11p.cc:12:9: error: use of undeclared identifier 'stage'
+    if (stage == 0) {
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:13:9: error: use of undeclared identifier 'sentMessage'
+        sentMessage = false;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:14:9: error: use of undeclared identifier 'lastDroveAt'
+        lastDroveAt = simTime();
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:15:9: error: use of undeclared identifier 'currentSubscribedServiceId'
+        currentSubscribedServiceId = -1;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:16:9: error: use of undeclared identifier 'hasCrashed'
+        hasCrashed = false;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:19:43: error: use of undeclared identifier 'traci'
+        std::list<std::string> routeIds = traci->getRouteIds();
+                                          ^
+veins/modules/application/traci/TraCIDemo11p.cc:20:9: error: no member named 'cLog' in namespace 'veins::omnetpp'; did you mean simply 'cLog'?
+        EV << "Rutas definidas en la red:" << std::endl;
+        ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:211:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::cLog::runtimeLogPredicate(object, logLevel, category))) ? \
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:154:15: note: 'cLog' declared here
+class SIM_API cLog
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:20:9: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+        EV << "Rutas definidas en la red:" << std::endl;
+        ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:212:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::internal::cLogProxy::dummyStream : omnetpp::internal::cLogProxy(object, logLevel, category, __FILE__, __LINE__, __FUNCTION__)
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:06:17 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:25:
+./veins/modules/application/traci/TraCIDemo11pMessage_m.h:111:47: error: no function template matches function template specialization 'fromAnyPtr'
+template<> inline veins::TraCIDemo11pMessage *fromAnyPtr(any_ptr ptr) { return check_and_cast<veins::TraCIDemo11pMessage*>(ptr.get<cObject>()); }
+                                              ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no type named 'cObject' in namespace 'veins::omnetpp'; did you mean simply 'cObject'?
+Define_Module(veins::TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:10: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+         ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/ccontextswitcher.h:33:7: note: 'cObject' declared here
+class cObject;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no type named 'cModule' in namespace 'veins::omnetpp'; did you mean simply 'cModule'?
+Define_Module(veins::TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:63: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                              ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:33: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                                ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:71: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+                                                                      ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/envirext.h:30:7: note: 'cModule' declared here
+class cModule;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:15: error: no type named 'TraCIDemo11p' in namespace 'veins::veins'; did you mean simply 'TraCIDemo11p'?
+Define_Module(veins::TraCIDemo11p);
+              ^~~~~~~~~~~~~~~~~~~
+              TraCIDemo11p
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:92: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+                                                                                           ^~~~~~~~~
+./veins/modules/application/traci/TraCIDemo11p.h:43:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no type named 'cObject' in namespace 'veins::omnetpp'; did you mean simply 'cObject'?
+Define_Module(veins::TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:153:53: note: expanded from macro '__REGISTER_CLASS_X'
+  static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+                                                    ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/ccontextswitcher.h:33:7: note: 'cObject' declared here
+class cObject;
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:15: error: no type named 'TraCIDemo11p' in namespace 'veins::veins'; did you mean simply 'TraCIDemo11p'?
+Define_Module(veins::TraCIDemo11p);
+              ^~~~~~~~~~~~~~~~~~~
+              TraCIDemo11p
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:153:104: note: expanded from macro '__REGISTER_CLASS_X'
+  static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+                                                                                                       ^~~~~~~~~
+./veins/modules/application/traci/TraCIDemo11p.h:43:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+Define_Module(veins::TraCIDemo11p);
+^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:22: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                     ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no type named 'cObjectFactory' in namespace 'veins::omnetpp'; did you mean simply 'cObjectFactory'?
+Define_Module(veins::TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:72: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                                                                       ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:54:30: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    void __ONSTARTUP_FUNC() {CODE;} \
+                             ^~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cobjectfactory.h:35:15: note: 'cObjectFactory' declared here
+class SIM_API cObjectFactory : public cNoncopyableOwnedObject
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no type named 'CodeFragments' in namespace 'veins::omnetpp'; did you mean simply 'CodeFragments'?
+Define_Module(veins::TraCIDemo11p);
+^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:3: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:55:12: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    static omnetpp::CodeFragments __ONSTARTUP_OBJ(__ONSTARTUP_FUNC, omnetpp::CodeFragments::STARTUP); \
+           ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:78:15: note: 'CodeFragments' declared here
+class SIM_API CodeFragments
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:30:1: error: no member named 'CodeFragments' in namespace 'veins::omnetpp'; did you mean simply 'CodeFragments'?
+Define_Module(veins::TraCIDemo11p);
+^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:35: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:3: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:3: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:55:69: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    static omnetpp::CodeFragments __ONSTARTUP_OBJ(__ONSTARTUP_FUNC, omnetpp::CodeFragments::STARTUP); \
+                                                                    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:78:15: note: 'CodeFragments' declared here
+class SIM_API CodeFragments
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'cLog' in namespace 'veins::omnetpp'; did you mean simply 'cLog'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:211:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::cLog::runtimeLogPredicate(object, logLevel, category))) ? \
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:154:15: note: 'cLog' declared here
+class SIM_API cLog
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:212:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::internal::cLogProxy::dummyStream : omnetpp::internal::cLogProxy(object, logLevel, category, __FILE__, __LINE__, __FUNCTION__)
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:212:49: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::internal::cLogProxy::dummyStream : omnetpp::internal::cLogProxy(object, logLevel, category, __FILE__, __LINE__, __FUNCTION__)
+                                                ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'LOGLEVEL_INFO' in namespace 'veins::omnetpp'; did you mean simply 'LOGLEVEL_INFO'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:26: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                         ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:63: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                                              ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:212:86: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::internal::cLogProxy::dummyStream : omnetpp::internal::cLogProxy(object, logLevel, category, __FILE__, __LINE__, __FUNCTION__)
+                                                                                     ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:69:5: note: 'LOGLEVEL_INFO' declared here
+    LOGLEVEL_INFO,
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'LOGLEVEL_INFO' in namespace 'veins::omnetpp'; did you mean simply 'LOGLEVEL_INFO'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:26: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                         ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:63: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                                              ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:210:51: note: expanded from macro 'OPP_LOGPROXY'
+    ((void)0, !(COMPILETIME_LOG_PREDICATE(object, logLevel, category) && \
+                                                  ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:145:48: note: expanded from macro 'COMPILETIME_LOG_PREDICATE'
+    (::omnetpp::defaultCompiletimeLogPredicate(logLevel, COMPILETIME_LOGLEVEL))
+                                               ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:69:5: note: 'LOGLEVEL_INFO' declared here
+    LOGLEVEL_INFO,
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'LOGLEVEL_DETAIL' in namespace 'veins::omnetpp'; did you mean simply 'LOGLEVEL_DETAIL'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:210:17: note: expanded from macro 'OPP_LOGPROXY'
+    ((void)0, !(COMPILETIME_LOG_PREDICATE(object, logLevel, category) && \
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:145:58: note: expanded from macro 'COMPILETIME_LOG_PREDICATE'
+    (::omnetpp::defaultCompiletimeLogPredicate(logLevel, COMPILETIME_LOGLEVEL))
+                                                         ^~~~~~~~~~~~~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:119:30: note: expanded from macro 'COMPILETIME_LOGLEVEL'
+#define COMPILETIME_LOGLEVEL omnetpp::LOGLEVEL_DETAIL
+                             ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:61:5: note: 'LOGLEVEL_DETAIL' declared here
+    LOGLEVEL_DETAIL,
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:43:9: error: no member named 'LOGLEVEL_INFO' in namespace 'veins::omnetpp'; did you mean simply 'LOGLEVEL_INFO'?
+        EV << "Rutas definidas en la red:" << endl;
+        ^~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:26: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                         ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:63: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                                              ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:211:48: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::cLog::runtimeLogPredicate(object, logLevel, category))) ? \
+                                               ^~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:69:5: note: 'LOGLEVEL_INFO' declared here
+    LOGLEVEL_INFO,
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:45:13: error: no member named 'cLog' in namespace 'veins::omnetpp'; did you mean simply 'cLog'?
+            EV << "- " << routeId << endl;
+            ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:211:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::cLog::runtimeLogPredicate(object, logLevel, category))) ? \
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:154:15: note: 'cLog' declared here
+class SIM_API cLog
+              ^
+veins/modules/application/traci/TraCIDemo11p.cc:45:13: error: no member named 'internal' in namespace 'veins::omnetpp'; did you mean simply 'internal'?
+            EV << "- " << routeId << endl;
+            ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:277:19: note: expanded from macro 'EV'
+#define EV        EV_INFO
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:301:19: note: expanded from macro 'EV_INFO'
+#define EV_INFO   EV_LOG(omnetpp::LOGLEVEL_INFO, nullptr)
+                  ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:271:36: note: expanded from macro 'EV_LOG'
+#define EV_LOG(logLevel, category) OPP_LOGPROXY(getThisPtr(), logLevel, category).getStream()
+                                   ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/clog.h:212:5: note: expanded from macro 'OPP_LOGPROXY'
+    omnetpp::internal::cLogProxy::dummyStream : omnetpp::internal::cLogProxy(object, logLevel, category, __FILE__, __LINE__, __FUNCTION__)
+    ^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/cxmlparimpl.h:22:11: note: 'internal' declared here
+namespace internal {
+          ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:06:44 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:19:32 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:2:17: error: unknown type name 'populateWSM'
+                populateWSM(wsm);
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:4:17: error: unknown type name 'wsm'
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:4:20: error: cannot use arrow operator on a type
+                wsm->setDemoData(traciVehicle->getRouteId().c_str());
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:5:17: error: unknown type name 'wsm'
+                wsm->setIsCollision(true);
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:5:20: error: cannot use arrow operator on a type
+                wsm->setIsCollision(true);
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:6:17: error: unknown type name 'wsm'
+                wsm->setCollisionPosition(pos);
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:6:20: error: cannot use arrow operator on a type
+                wsm->setCollisionPosition(pos);
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:8:17: error: expected unqualified-id
+                if (dataOnSch) {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:11:19: error: expected unqualified-id
+                } else {
+                  ^
+veins/modules/application/traci/TraCIDemo11p.cc:14:13: error: extraneous closing brace ('}')
+            }
+            ^
+veins/modules/application/traci/TraCIDemo11p.cc:15:9: error: extraneous closing brace ('}')
+        }
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:16:5: error: extraneous closing brace ('}')
+    } else {
+    ^
+veins/modules/application/traci/TraCIDemo11p.cc:16:7: error: expected unqualified-id
+    } else {
+      ^
+veins/modules/application/traci/TraCIDemo11p.cc:19:1: error: extraneous closing brace ('}')
+}
+^
+14 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:20:52 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:27:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:16:9: error: use of undeclared identifier 'hasCrashed'
+        hasCrashed = false;
+        ^
+veins/modules/application/traci/TraCIDemo11p.cc:88:18: error: use of undeclared identifier 'hasCrashed'
+            if (!hasCrashed && !sentMessage) {
+                 ^
+veins/modules/application/traci/TraCIDemo11p.cc:89:17: error: use of undeclared identifier 'hasCrashed'
+                hasCrashed = true;
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:120:13: error: use of undeclared identifier 'hasCrashed'
+        if (hasCrashed) {
+            ^
+veins/modules/application/traci/TraCIDemo11p.cc:121:13: error: use of undeclared identifier 'hasCrashed'
+            hasCrashed = false;
+            ^
+5 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:27:49 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:23:9: warning: #pragma once in main file [-Wpragma-once-outside-header]
+#pragma once
+        ^
+1 warning generated.
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:29:08 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:31:00 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:34:55 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:36:03 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:39:55 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:44:33 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+In file included from veins/modules/application/traci/TraCIDemo11p.cc:1:
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: error: variable has incomplete type 'class VEINS_API'
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:7: note: forward declaration of 'VEINS_API'
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+      ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:30: error: expected ';' after top level declarator
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                             ^
+                             ;
+./veins/modules/application/traci/TraCIDemo11p.h:1:32: error: expected unqualified-id
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                               ^
+veins/modules/application/traci/TraCIDemo11p.cc:6:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:152:92: note: expanded from macro '__REGISTER_CLASS_X'
+  static omnetpp::cObject *MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_)() {BASECLASS *ret = new CLASSNAME; return ret; } \
+                                                                                           ^~~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:6:22: error: no type named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:153:104: note: expanded from macro '__REGISTER_CLASS_X'
+  static void *MAKE_UNIQUE_WITHIN_FILE(__castfunc_)(omnetpp::cObject *obj) {return (void*)dynamic_cast<CLASSNAME*>(obj);} \
+                                                                                                       ^~~~~~~~~
+veins/modules/application/traci/TraCIDemo11p.cc:6:22: error: no member named 'TraCIDemo11p' in namespace 'veins'
+Define_Module(veins::TraCIDemo11p);
+              ~~~~~~~^
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:136:52: note: expanded from macro 'Define_Module'
+#define Define_Module(CLASSNAME)  __REGISTER_CLASS(CLASSNAME, omnetpp::cModule, "module")
+                                                   ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:148:22: note: expanded from macro '__REGISTER_CLASS'
+  __REGISTER_CLASS_X(CLASSNAME, BASECLASS, DESC, /*nothing*/ )
+                     ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/regmacros.h:154:125: note: expanded from macro '__REGISTER_CLASS_X'
+  EXECUTE_ON_STARTUP(omnetpp::internal::classes.getInstance()->add(new omnetpp::cObjectFactory(omnetpp::opp_typename(typeid(CLASSNAME)), MAKE_UNIQUE_WITHIN_FILE(__factoryfunc_), MAKE_UNIQUE_WITHIN_FILE(__castfunc_), DESC)); EXTRACODE; )
+                                                                                                                            ^~~~~~~~~
+/home/ricky/Downloads/omnetpp-6.0/include/omnetpp/onstartup.h:54:30: note: expanded from macro 'EXECUTE_ON_STARTUP'
+    void __ONSTARTUP_FUNC() {CODE;} \
+                             ^~~~
+veins/modules/application/traci/TraCIDemo11p.cc:8:6: error: 'TraCIDemo11p' is not a class, namespace, or enumeration
+void TraCIDemo11p::initialize(int stage) {
+     ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:17:6: error: 'TraCIDemo11p' is not a class, namespace, or enumeration
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa) {
+     ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:17:26: error: unknown type name 'DemoServiceAdvertisment'
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa) {
+                         ^
+veins/modules/application/traci/TraCIDemo11p.cc:28:6: error: 'TraCIDemo11p' is not a class, namespace, or enumeration
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+     ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:49:6: error: 'TraCIDemo11p' is not a class, namespace, or enumeration
+void TraCIDemo11p::handleSelfMsg(cMessage* msg) {
+     ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+veins/modules/application/traci/TraCIDemo11p.cc:64:6: error: 'TraCIDemo11p' is not a class, namespace, or enumeration
+void TraCIDemo11p::handlePositionUpdate(cObject* obj) {
+     ^
+./veins/modules/application/traci/TraCIDemo11p.h:1:17: note: 'TraCIDemo11p' declared here
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+                ^
+12 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:44:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:47:05 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:47:47 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:48:00 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:51:27 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:51:41 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:82:1: error: expected '}'
+^
+veins/modules/application/traci/TraCIDemo11p.cc:49:55: note: to match this '{'
+void TraCIDemo11p::handlePositionUpdate(cObject* obj) {
+                                                      ^
+1 error generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make: *** [Makefile:36: all] Error 2
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+22:52:12 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:52:42 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:53:29 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:55:01 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:55:30 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:56:56 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make[1]: No se hace nada para 'all'.
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+22:59:24 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+23:01:19 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+23:02:20 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+veins/modules/application/traci/TraCIDemo11p.cc:71:20: error: redefinition of 'initialize'
+void TraCIDemo11p::initialize(int stage) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:8:20: note: previous definition is here
+void TraCIDemo11p::initialize(int stage) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:80:20: error: redefinition of 'onWSA'
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:17:20: note: previous definition is here
+void TraCIDemo11p::onWSA(DemoServiceAdvertisment* wsa) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:91:20: error: redefinition of 'onWSM'
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:28:20: note: previous definition is here
+void TraCIDemo11p::onWSM(BaseFrame1609_4* frame) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:112:20: error: redefinition of 'handleSelfMsg'
+void TraCIDemo11p::handleSelfMsg(cMessage* msg) {
+                   ^
+veins/modules/application/traci/TraCIDemo11p.cc:49:20: note: previous definition is here
+void TraCIDemo11p::handleSelfMsg(cMessage* msg) {
+                   ^
+4 errors generated.
+make[1]: *** [Makefile:228: ../out/clang-release/src/veins/modules/application/traci/TraCIDemo11p.o] Error 1
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+make: *** [Makefile:36: all] Error 2
+"make MODE=release -j1 all" terminated with exit code 2. Build might be incomplete.
+23:04:10 **** Incremental Build of configuration gcc-release for project veins ****
+make MODE=release -j1 all 
+make[1]: se entra en el directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'
+veins/modules/application/traci/TraCIDemo11p.cc
+Creating shared library: ../out/clang-release/src/libveins.so
+make[1]: se sale del directorio '/home/ricky/Documents/R.Vehicular/Trabajos-omnet/veins/src'

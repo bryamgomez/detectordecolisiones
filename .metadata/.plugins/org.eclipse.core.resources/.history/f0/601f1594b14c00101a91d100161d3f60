@@ -1,0 +1,33 @@
+#ifndef TRACIDEMO11P_H
+#define TRACIDEMO11P_H
+
+#include "veins/modules/application/ieee80211p/DemoBaseApplLayer.h"
+#include "veins/base/utils/Coord.h"
+#include <string>
+
+namespace veins {
+
+class VEINS_API TraCIDemo11p : public DemoBaseApplLayer {
+public:
+    void initialize(int stage) override;
+
+protected:
+    simtime_t lastDroveAt;
+    bool hasCrashed;
+    bool sentMessage;
+    int currentSubscribedServiceId;
+    bool isRerouting;
+    std::string destinationEdge; // Guarda el borde destino
+
+protected:
+    void onWSM(BaseFrame1609_4* wsm) override;
+    void onWSA(DemoServiceAdvertisment* wsa) override;
+    void handleSelfMsg(cMessage* msg) override;
+    void handlePositionUpdate(cObject* obj) override;
+    void findAndChangeRoute(); // Encuentra y cambia a mejor ruta
+    std::string getCurrentDestination(); // Obtiene el borde destino actual
+};
+
+} // namespace veins
+
+#endif
